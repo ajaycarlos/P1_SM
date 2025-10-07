@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janatha Bazar - Vengara | Demo</title>
+    <title>Janatha Bazar - Vengara | Fresh Groceries & Daily Needs</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,42 +11,145 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">Janatha Bazar</a>
+                <a href="index.html" class="logo-container">
+                    <img src="logo1.png" alt="Janatha Bazar Logo">
+                    <span>Janatha Bazar</span>
+                </a>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li><a href="products.html">All Products</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products...">
+                        <button onclick="window.location.href='search.html'">Search</button>
+                    </div>
+                    <a href="cart.html" class="btn btn-primary">View Cart (0)</a>
+                </div>
             </nav>
         </div>
     </header>
 
+    <div class="category-nav-wrapper">
+        <div class="container">
+            <ul class="category-nav">
+                <li><a href="products.html" class="active">All Categories</a></li>
+                <li><a href="category-vegetables.html">Fresh Vegetables</a></li>
+                <li><a href="category-dairy.html">Dairy & Bakery</a></li>
+                <li><a href="#">Staples & Grains</a></li>
+                <li><a href="#">Snacks & Beverages</a></li>
+                <li><a href="#">Household Needs</a></li>
+                <li><a href="#">Personal Care</a></li>
+            </ul>
+        </div>
+    </div>
+
     <main>
         <section class="hero">
-            <h1>Your Daily Needs, Delivered Fresh</h1>
-            <p>Quality groceries at the best prices, right from your local Janatha Bazar.</p>
-            <a href="products.html" class="btn">Shop All Products</a>
-            
+            <h1>Your Trusted Partner for Fresh Groceries & Daily Essentials</h1>
+            <p>Quality products, unbeatable prices, and convenient home delivery from Janatha Bazar, Vengara.</p>
+            <a href="products.html" class="btn">Start Shopping Now</a>
         </section>
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Featured Products</h2>
+                <h2 class="section-title">Exclusive Offers & Discounts</h2>
+                <div class="offers-grid">
+                    <div class="offer-card">
+                        <img src="https://images.unsplash.com/photo-1579633634027-e435987a17a0?q=80&w=2070&auto=format&fit=crop" alt="Offer on Vegetables" class="offer-image">
+                        <div class="offer-info">
+                            <h3>Seasonal Vegetable Sale - Up to 20% Off!</h3>
+                            <p>Fresh arrivals every day. Don't miss out on healthy savings.</p>
+                            <a href="category-vegetables.html" class="btn btn-primary">Shop Vegetables</a>
+                        </div>
+                    </div>
+                    <div class="offer-card">
+                        <img src="https://images.unsplash.com/photo-1627885474665-2a27ac46b149?q=80&w=2070&auto=format&fit=crop" alt="Offer on Staples" class="offer-image">
+                        <div class="offer-info">
+                            <h3>Bulk Staples Offer - Save More!</h3>
+                            <p>Stock up on rice, pulses, and spices. Great deals for your pantry.</p>
+                            <a href="#" class="btn btn-primary">Explore Staples</a>
+                        </div>
+                    </div>
+                    <div class="offer-card">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop" alt="First Order Discount" class="offer-image">
+                        <div class="offer-info">
+                            <h3>Special Launch Offer: 18% Off Your First Order!</h3>
+                            <p>New customers get an exclusive discount. Use code: JBDEMO18</p>
+                            <a href="products.html" class="btn">Get Discount Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Shop by Popular Categories</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1518843872491-b333c7c7f769?q=80&w=2070&auto=format&fit=crop" alt="Vegetables" class="product-image">
+                        <div class="product-info">
+                            <h3>Fresh Vegetables</h3>
+                            <p class="product-category">Locally sourced & Organic options</p>
+                            <a href="category-vegetables.html" class="btn btn-primary add-to-cart-btn">View All</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1550583724-b2692b2ae389?q=80&w=2070&auto=format&fit=crop" alt="Dairy & Bakery" class="product-image">
+                        <div class="product-info">
+                            <h3>Dairy & Bakery</h3>
+                            <p class="product-category">Milk, Eggs, Bread & more</p>
+                            <a href="category-dairy.html" class="btn btn-primary add-to-cart-btn">View All</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1627885474665-2a27ac46b149?q=80&w=2070&auto=format&fit=crop" alt="Staples & Grains" class="product-image">
+                        <div class="product-info">
+                            <h3>Staples & Grains</h3>
+                            <p class="product-category">Rice, Pulses, Spices & Flour</p>
+                            <a href="#" class="btn btn-primary add-to-cart-btn">View All</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1546069901-d7037f598877?q=80&w=2070&auto=format&fit=crop" alt="Snacks & Beverages" class="product-image">
+                        <div class="product-info">
+                            <h3>Snacks & Beverages</h3>
+                            <p class="product-category">Chips, Cookies, Soft Drinks</p>
+                            <a href="#" class="btn btn-primary add-to-cart-btn">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Best Sellers This Week</h2>
                 <div class="product-grid">
                     <div class="product-card">
                         <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=1974&auto=format&fit=crop" alt="Apples" class="product-image">
                         <div class="product-info">
                             <h3>Kashmiri Apple (1kg)</h3>
-                            <p class="product-price">₹180 <span>₹220</span></p>
+                            <p class="product-category">Fresh Fruits</p>
+                            <div class="price-container">
+                                <p class="current-price">₹180</p>
+                                <p class="old-price">₹220</p>
+                            </div>
                             <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1550583724-b2692b2ae389?q=80&w=2070&auto=format&fit=crop" alt="Milk" class="product-image">
+                        <img src="https://images.unsplash.com/photo-1579633634027-e435987a17a0?q=80&w=2070&auto=format&fit=crop" alt="Onions" class="product-image">
                         <div class="product-info">
-                            <h3>Milma Fresh Milk (500ml)</h3>
-                            <p class="product-price">₹26</p>
+                            <h3>Big Onion (1kg)</h3>
+                            <p class="product-category">Fresh Vegetables</p>
+                            <div class="price-container">
+                                <p class="current-price">₹35</p>
+                            </div>
                             <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
@@ -54,7 +157,11 @@
                         <img src="https://images.unsplash.com/photo-1599579083594-38631b2d0714?q=80&w=1974&auto=format&fit=crop" alt="Bread" class="product-image">
                         <div class="product-info">
                             <h3>Fresh Brown Bread</h3>
-                            <p class="product-price">₹45 <span>₹50</span></p>
+                            <p class="product-category">Bakery</p>
+                            <div class="price-container">
+                                <p class="current-price">₹45</p>
+                                <p class="old-price">₹50</p>
+                            </div>
                             <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
@@ -62,7 +169,10 @@
                         <img src="https://images.unsplash.com/photo-1603038222839-36263f698377?q=80&w=1974&auto=format&fit=crop" alt="Eggs" class="product-image">
                         <div class="product-info">
                             <h3>Farm Fresh Eggs (12 pcs)</h3>
-                            <p class="product-price">₹70</p>
+                            <p class="product-category">Dairy</p>
+                            <div class="price-container">
+                                <p class="current-price">₹70</p>
+                            </div>
                             <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
@@ -72,7 +182,10 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 Janatha Bazar, Vengara. Demo site created for proposal.</p>
+        <div class="container">
+            <p>&copy; 2025 Janatha Bazar, Vengara. All rights reserved.</p>
+            <p>Designed for proposal purposes by [Your Name/Company Name].</p>
+        </div>
     </footer>
 
 </body>

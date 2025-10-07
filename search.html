@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Janatha Bazar Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo-container">
+                    <img src="logo1.png" alt="Janatha Bazar Logo">
+                    <span>Janatha Bazar</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products..." value="Tomato">
+                        <button onclick="window.location.href='search.html'">Search</button>
+                    </div>
+                    <a href="cart.html" class="btn btn-primary">View Cart (0)</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="category-nav-wrapper">
+        <div class="container">
+            <ul class="category-nav">
+                <li><a href="products.html">All Categories</a></li>
+                <li><a href="category-vegetables.html" class="active">Fresh Vegetables</a></li>
+                <li><a href="category-dairy.html">Dairy & Bakery</a></li>
+                <li><a href="#">Staples & Grains</a></li>
+                <li><a href="#">Snacks & Beverages</a></li>
+                <li><a href="#">Household Needs</a></li>
+                <li><a href="#">Personal Care</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <section class="section generic-page-content">
+            <div class="container">
+                <h2 class="section-title">Search Results for "Tomato"</h2>
+                <p>Showing products matching your search query.</p>
+                <div class="product-grid" style="margin-top: 40px; max-width: 800px;">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1587496679742-9012e245447f?q=80&w=1974&auto=format&fit=crop" alt="Tomatoes" class="product-image">
+                        <div class="product-info">
+                            <h3>Local Tomato (1kg)</h3>
+                            <p class="product-category">Fresh Vegetables</p>
+                            <div class="price-container">
+                                <p class="current-price">₹40</p>
+                                <p class="old-price">₹55</p>
+                            </div>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1587496679742-9012e245447f?q=80&w=1974&auto=format&fit=crop" alt="Cherry Tomatoes" class="product-image">
+                        <div class="product-info">
+                            <h3>Cherry Tomatoes (250g)</h3>
+                            <p class="product-category">Exotic Vegetables</p>
+                            <div class="price-container">
+                                <p class="current-price">₹80</p>
+                            </div>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Janatha Bazar, Vengara. All rights reserved.</p>
+            <p>Designed for proposal purposes by [Your Name/Company Name].</p>
+        </div>
+    </footer>
+
+</body>
+</html>
