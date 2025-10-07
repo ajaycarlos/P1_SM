@@ -1,67 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart - Janatha Bazar Demo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
-
     <header class="header">
+        </header>
+    <main class="section">
         <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo-container">
-                    <img src="logo1.png" alt="Janatha Bazar Logo">
-                    <span>Janatha Bazar</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">All Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <div class="header-actions">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search products...">
-                        <button onclick="window.location.href='search.html'">Search</button>
-                    </div>
-                    <a href="cart.html" class="btn btn-primary active">View Cart (0)</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <div class="category-nav-wrapper">
-        <div class="container">
-            <ul class="category-nav">
-                <li><a href="products.html">All Categories</a></li>
-                <li><a href="category-vegetables.html">Fresh Vegetables</a></li>
-                <li><a href="category-dairy.html">Dairy & Bakery</a></li>
-                <li><a href="#">Staples & Grains</a></li>
-                <li><a href="#">Snacks & Beverages</a></li>
-                <li><a href="#">Household Needs</a></li>
-                <li><a href="#">Personal Care</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <main>
-        <section class="section generic-page-content">
-            <div class="container">
-                <h2 class="section-title">Your Shopping Cart</h2>
-                <p>This is where your selected items would appear. Currently empty.</p>
-                <a href="products.html" class="btn btn-primary" style="margin-top: 30px;">Continue Shopping</a>
+            <h2 class="section-title">Your Shopping Cart</h2>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="cart-item-info">
+                                <img src="images/milma-milk.jpg" alt="Milk">
+                                <div>
+                                    <h3>Milma Fresh Milk (500ml)</h3>
+                                    <a href="#">Remove</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹26</td>
+                        <td>
+                           <div class="quantity-selector">
+                                <button>-</button>
+                                <input type="text" value="2">
+                                <button>+</button>
+                            </div>
+                        </td>
+                        <td>₹52</td>
+                    </tr>
+                     </tbody>
+            </table>
+            <div class="cart-actions">
+                <h3>Subtotal: ₹52.00</h3>
+                <a href="checkout.html" class="btn">Proceed to Checkout</a>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Janatha Bazar, Vengara. All rights reserved.</p>
-            <p>Designed for proposal purposes by [Your Name/Company Name].</p>
         </div>
-    </footer>
-
+    </main>
+    <footer class="footer">
+        </footer>
 </body>
 </html>

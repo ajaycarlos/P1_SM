@@ -3,157 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Products - Janatha Bazar Demo</title>
+    <title>Shop All Products - Janatha Bazar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="header">
+        </header>
+
+    <main class="section">
         <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo-container">
-                    <img src="logo1.png" alt="Janatha Bazar Logo">
-                    <span>Janatha Bazar</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="active">All Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <div class="header-actions">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search products...">
-                        <button onclick="window.location.href='search.html'">Search</button>
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-layout">
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#">All Products</a></li>
+                            <li><a href="#">Groceries</a></li>
+                            <li><a href="#">Snacks</a></li>
+                            <li><a href="#">Beverages</a></li>
+                            <li><a href="#">Personal Care</a></li>
+                        </ul>
                     </div>
-                    <a href="cart.html" class="btn btn-primary">View Cart (0)</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+                    <div class="filter-group">
+                        <h3>Filter by Price</h3>
+                        <div class="price-filter">
+                            <input type="range" min="10" max="1000" value="500">
+                            <p>Price: ₹10 - ₹1000</p>
+                        </div>
+                    </div>
+                     <div class="filter-group">
+                        <h3>Brands</h3>
+                        <ul>
+                            <li><a href="#">Local Brand</a></li>
+                            <li><a href="#">Amul</a></li>
+                            <li><a href="#">Britannia</a></li>
+                            <li><a href="#">Milma</a></li>
+                        </ul>
+                    </div>
+                </aside>
 
-    <div class="category-nav-wrapper">
-        <div class="container">
-            <ul class="category-nav">
-                <li><a href="products.html" class="active">All Categories</a></li>
-                <li><a href="category-vegetables.html">Fresh Vegetables</a></li>
-                <li><a href="category-dairy.html">Dairy & Bakery</a></li>
-                <li><a href="#">Staples & Grains</a></li>
-                <li><a href="#">Snacks & Beverages</a></li>
-                <li><a href="#">Household Needs</a></li>
-                <li><a href="#">Personal Care</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <main>
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Our Complete Product Range</h2>
                 <div class="product-grid">
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=1974&auto=format&fit=crop" alt="Apples" class="product-image">
-                        <div class="product-info">
+                     <div class="product-card">
+                        <a href="product-detail.html" class="product-card-img">
+                            <img src="images/kashmiri-apple.jpg" alt="Apple">
+                        </a>
+                        <div class="product-card-info">
                             <h3>Kashmiri Apple (1kg)</h3>
-                            <p class="product-category">Fresh Fruits</p>
-                            <div class="price-container">
-                                <p class="current-price">₹180</p>
-                                <p class="old-price">₹220</p>
-                            </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
+                            <p class="price">₹180</p>
+                            <button class="btn btn-add-to-cart">Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1550583724-b2692b2ae389?q=80&w=2070&auto=format&fit=crop" alt="Milk" class="product-image">
-                        <div class="product-info">
-                            <h3>Milma Fresh Milk (500ml)</h3>
-                            <p class="product-category">Dairy</p>
-                            <div class="price-container">
-                                <p class="current-price">₹26</p>
-                            </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                        </div>
                     </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1599579083594-38631b2d0714?q=80&w=1974&auto=format&fit=crop" alt="Bread" class="product-image">
-                        <div class="product-info">
-                            <h3>Fresh Brown Bread</h3>
-                            <p class="product-category">Bakery</p>
-                            <div class="price-container">
-                                <p class="current-price">₹45</p>
-                                <p class="old-price">₹50</p>
-                            </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1603038222839-36263f698377?q=80&w=1974&auto=format&fit=crop" alt="Eggs" class="product-image">
-                        <div class="product-info">
-                            <h3>Farm Fresh Eggs (12 pcs)</h3>
-                            <p class="product-category">Dairy</p>
-                            <div class="price-container">
-                                <p class="current-price">₹70</p>
-                            </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?q=80&w=1974&auto=format&fit=crop" alt="Bananas" class="product-image">
-                        <div class="product-info">
-                            <h3>Nendran Banana (1kg)</h3>
-                            <p class="product-category">Fresh Fruits</p>
-                            <div class="price-container">
-                                <p class="current-price">₹65</p>
-                            </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1587496679742-9012e245447f?q=80&w=1974&auto=format&fit=crop" alt="Tomatoes" class="product-image">
-                        <div class="product-info">
-                            <h3>Local Tomato (1kg)</h3>
-                            <p class="product-category">Fresh Vegetables</p>
-                            <div class="price-container">
-                                <p class="current-price">₹40</p>
-                                <p class="old-price">₹55</p>
-                            </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1543083626-d249e0b1f141?q=80&w=1974&auto=format&fit=crop" alt="Rice" class="product-image">
-                        <div class="product-info">
-                            <h3>Ponni Rice (5kg)</h3>
-                            <p class="product-category">Staples & Grains</p>
-                            <div class="price-container">
-                                <p class="current-price">₹320</p>
-                            </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1542291026-79eed3a456ae?q=80&w=2070&auto=format&fit=crop" alt="Detergent" class="product-image">
-                        <div class="product-info">
-                            <h3>Surf Excel Detergent (1kg)</h3>
-                            <p class="product-category">Household Needs</p>
-                            <div class="price-container">
-                                <p class="current-price">₹150</p>
-                                <p class="old-price">₹165</p>
-                            </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Janatha Bazar, Vengara. All rights reserved.</p>
-            <p>Designed for proposal purposes by [Your Name/Company Name].</p>
-        </div>
-    </footer>
+        </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
