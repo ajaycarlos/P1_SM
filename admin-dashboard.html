@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Janatha Bazar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="logo-container" style="padding: 20px;">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="admin-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="admin-products.html">Products</a></li>
+                <li><a href="#">Customers</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </aside>
+        <main class="admin-main-content">
+            <header class="admin-header">
+                <h2>Welcome, Admin!</h2>
+            </header>
+            <section class="admin-content-area">
+                <h3>Recent Orders</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#JB12345</td>
+                            <td>Ramesh P.</td>
+                            <td>₹372.00</td>
+                            <td><span class="status-packing">Packing</span></td>
+                            <td><button class="btn btn-sm">View Details</button></td>
+                        </tr>
+                         <tr>
+                            <td>#JB12344</td>
+                            <td>Fathima S.</td>
+                            <td>₹110.00</td>
+                            <td><span class="status-delivered">Delivered</span></td>
+                            <td><button class="btn btn-sm">View Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>#JB12343</td>
+                            <td>Arun Kumar</td>
+                            <td>₹240.00</td>
+                            <td><span class="status-delivered">Delivered</span></td>
+                            <td><button class="btn btn-sm">View Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
