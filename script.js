@@ -10,102 +10,90 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Checkout Page Logic ---
-    const deliveryRadio = document.getElementById('delivery');
-    const pickupRadio = document.getElementById('pickup');
-    const deliveryAddressForm = document.getElementById('delivery-address-form');
+    // --- Customer OTP Login Simulation ---
+    const sendOtpBtn = document.getElementById('send-otp-btn');
+    const otpSection = document.getElementById('otp-section');
+    const loginBtn = document.getElementById('login-btn');
+    const otpInput = document.getElementById('otp-input');
+    const loginMessage = document.getElementById('login-message');
 
-    if (deliveryRadio && pickupRadio && deliveryAddressForm) {
-        // Function to update form display
-        const updateDeliveryOptions = () => {
-            if (deliveryRadio.checked) {
-                deliveryAddressForm.style.display = 'block';
-            } else {
-                deliveryAddressForm.style.display = 'none';
-            }
-        };
-
-        // Initial check
-        updateDeliveryOptions();
-
-        // Add event listeners
-        deliveryRadio.addEventListener('change', updateDeliveryOptions);
-        pickupRadio.addEventListener('change', updateDeliveryOptions);
-    }
-
-    // --- Add to Cart Alert ---
-    const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            alert('This is a demo! In the real site, this would add the item to your cart.');
-        });
-    });
-
-});
-// --- Customer Login Page Logic ---
-const sendOtpBtn = document.getElementById('send-otp-btn');
-const otpSection = document.getElementById('otp-section');
-const loginBtn = document.getElementById('login-btn');
-const otpInput = document.getElementById('otp-input');
-const loginMessage = document.getElementById('login-message');
-
-if (sendOtpBtn) {
-    sendOtpBtn.addEventListener('click', () => {
-        const phoneNumber = document.getElementById('phone-number').value;
-        if (phoneNumber.length >= 10) {
+    if (sendOtpBtn) {
+        sendOtpBtn.addEventListener('click', function() {
             otpSection.style.display = 'block';
-            loginMessage.textContent = 'OTP has been sent!';
-            loginMessage.style.color = 'var(--success-color)';
-        } else {
-            loginMessage.textContent = 'Please enter a valid phone number.';
-            loginMessage.style.color = '#dc3545';
-        }
-    });
-}
+            loginMessage.textContent = 'An OTP has been sent to your number.';
+            loginMessage.style.color = 'var(--primary-color)';
+        });
+    }
 
-if (loginBtn) {
-    loginBtn.addEventListener('click', () => {
-        if (otpInput.value === '7777') {
-            loginMessage.textContent = 'Login Successful!';
-            loginMessage.style.color = 'var(--success-color)';
-            // In a real site, you would redirect here:
-            // window.location.href = 'index.html';
-        } else {
-            loginMessage.textContent = 'Invalid OTP. Please try again.';
-            loginMessage.style.color = '#dc3545';
-        }
-    });
-}
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function() {
+            if (otpInput.value === '7777') {
+                loginMessage.textContent = 'Success! You are now logged in.';
+                loginMessage.style.color = 'var(--success-color)';
+                // In a real app, you would redirect here:
+                // window.location.href = 'index.html';
+            } else {
+                loginMessage.textContent = 'Invalid OTP. Please try again.';
+                loginMessage.style.color = '#dc3545';
+            }
+        });
+    }
 
+    // --- Admin Login Simulation (THIS IS THE NEW CODE) ---
+    const adminLoginBtn = document.getElementById('admin-login-btn');
+    
+    if (adminLoginBtn) {
+        adminLoginBtn.addEventListener('click', function() {
+            const user = document.getElementById('admin-user').value;
+            const pass = document.getElementById('admin-pass').value;
+            const messageEl = document.getElementById('admin-login-message');
 
-// --- Admin Product Edit Modal Logic ---
-const editProductModal = document.getElementById('edit-product-modal');
-const editProductBtns = document.querySelectorAll('.btn-edit-product');
-const closeModalBtn = document.getElementById('close-modal-btn');
-const saveChangesBtn = document.getElementById('save-changes-btn');
+            if (user === 'admin' && pass === 'password123') {
+                messageEl.textContent = 'Login successful! Redirecting...';
+                messageEl.style.color = 'var(--success-color)';
+                
+                // Redirect to the dashboard after a short delay
+                setTimeout(() => {
+                    window.location.href = 'admin-dashboard.html';
+                }, 1000); // 1 second delay
 
-editProductBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        editProductModal.style.display = 'block';
-    });
+            } else {
+                messageEl.textContent = 'Invalid username or password.';
+                messageEl.style.color = '#dc3545';
+            }
+        });
+    }
+
+    // --- Admin Products Page - Modal Logic ---
+    const editButtons = document.querySelectorAll('.btn-edit-product');
+    const modal = document.getElementById('edit-product-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const saveChangesBtn = document.getElementById('save-changes-btn');
+
+    if (modal) {
+        editButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.style.display = 'block';
+            });
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        saveChangesBtn.addEventListener('click', () => {
+            alert('Demo: Product details would be saved now!');
+            modal.style.display = 'none';
+        });
+
+        // Close modal if user clicks outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+
 });
 
-if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', () => {
-        editProductModal.style.display = 'none';
-    });
-}
 
-if (saveChangesBtn) {
-    saveChangesBtn.addEventListener('click', () => {
-        alert('Product details updated successfully! (This is a demo)');
-        editProductModal.style.display = 'none';
-    });
-}
-
-// Close modal if user clicks outside of it
-window.onclick = function(event) {
-    if (event.target == editProductModal) {
-        editProductModal.style.display = "none";
-    }
-}
