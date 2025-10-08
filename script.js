@@ -10,103 +10,126 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Customer OTP Login Simulation ---
+    // --- THIS IS THE CORRECTED CODE FOR THE CHECKOUT PAGE ---
+    const deliveryRadio = document.getElementById('delivery');
+    const pickupRadio = document.getElementById('pickup');
+    const deliveryAddressForm = document.getElementById('delivery-address-form');
+
+    if (deliveryRadio && pickupRadio && deliveryAddressForm) {
+        // Function to update form display based on radio button selection
+        const updateDeliveryOptions = () => {
+            if (deliveryRadio.checked) {
+                deliveryAddressForm.style.display = 'block';
+            } else {
+                deliveryAddressForm.style.display = 'none';
+            }
+        };
+
+        // Run the function once on page load to set the initial state
+        updateDeliveryOptions();
+
+        // Add event listeners to both radio buttons to run the function on change
+        deliveryRadio.addEventListener('change', updateDeliveryOptions);
+        pickupRadio.addEventListener('change', updateDeliveryOptions);
+    }
+    // --- END OF CORRECTED CODE ---
+
+
+    // --- Add to Cart Alert ---
+    const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            alert('This is a demo! In the real site, this would add the item to your cart.');
+        });
+    });
+
+
+    // --- Customer Login Page Logic (OTP Demo) ---
     const sendOtpBtn = document.getElementById('send-otp-btn');
     const otpSection = document.getElementById('otp-section');
     const loginBtn = document.getElementById('login-btn');
-    const otpInput = document.getElementById('otp-input');
     const loginMessage = document.getElementById('login-message');
 
     if (sendOtpBtn) {
         sendOtpBtn.addEventListener('click', function() {
-            otpSection.style.display = 'block';
-            loginMessage.textContent = 'An OTP has been sent to your number.';
-            loginMessage.style.color = 'var(--primary-color)';
+            const phone = document.getElementById('phone-number').value;
+            if (phone.length === 10 && /^\d+$/.test(phone)) {
+                otpSection.style.display = 'block';
+                loginMessage.textContent = `OTP sent to ${phone}.`;
+                loginMessage.style.color = 'green';
+            } else {
+                loginMessage.textContent = 'Please enter a valid 10-digit phone number.';
+                loginMessage.style.color = 'red';
+            }
         });
     }
-
     if (loginBtn) {
         loginBtn.addEventListener('click', function() {
-            if (otpInput.value === '7777') {
-                loginMessage.textContent = 'Success! You are now logged in.';
-                loginMessage.style.color = 'var(--success-color)';
-                // In a real app, you would redirect here:
-                // window.location.href = 'index.html';
+            const otp = document.getElementById('otp-input').value;
+            if (otp === '7777') {
+                loginMessage.textContent = 'Login successful! Redirecting...';
+                loginMessage.style.color = 'green';
+                setTimeout(() => { window.location.href = 'index.html'; }, 1500);
             } else {
                 loginMessage.textContent = 'Invalid OTP. Please try again.';
-                loginMessage.style.color = '#dc3545';
+                loginMessage.style.color = 'red';
             }
         });
     }
 
-    // --- Admin Login Simulation (THIS IS THE NEW CODE) ---
+    // --- Admin Login Page Logic ---
     const adminLoginBtn = document.getElementById('admin-login-btn');
-    
     if (adminLoginBtn) {
         adminLoginBtn.addEventListener('click', function() {
-            const user = document.getElementById('admin-user').value;
-            const pass = document.getElementById('admin-pass').value;
+            const password = document.getElementById('admin-password').value;
             const messageEl = document.getElementById('admin-login-message');
-
-            if (user === 'admin' && pass === 'password123') {
-                messageEl.textContent = 'Login successful! Redirecting...';
-                messageEl.style.color = 'var(--success-color)';
-                
-                // Redirect to the dashboard after a short delay
-                setTimeout(() => {
-                    window.location.href = 'admin-dashboard.html';
-                }, 1000); // 1 second delay
-
+            if (password === 'admin123') {
+                messageEl.textContent = 'Login successful! Redirecting to dashboard...';
+                messageEl.style.color = 'green';
+                setTimeout(() => { window.location.href = 'admin-dashboard.html'; }, 1000);
             } else {
-                messageEl.textContent = 'Invalid username or password.';
-                messageEl.style.color = '#dc3545';
+                messageEl.textContent = 'Incorrect password. Please try again.';
+                messageEl.style.color = 'red';
             }
         });
     }
 
-    // --- Admin Products Page - Modal Logic ---
-    const editButtons = document.querySelectorAll('.btn-edit-product');
+    // --- Admin Products Page Modal Logic ---
     const modal = document.getElementById('edit-product-modal');
-    const closeModalBtn = document.getElementById('close-modal-btn');
-    const saveChangesBtn = document.getElementById('save-changes-btn');
+    const editButtons = document.querySelectorAll('.btn-edit-product');
+    const closeButton = document.querySelector('.close-button');
+    const saveChangesBtn = document.getElementById('save-product-changes');
 
-    if (modal) {
+    if (editButtons.length > 0 && modal) {
         editButtons.forEach(button => {
-            button.addEventListener('click', () => {
+            button.addEventListener('click', function() {
+                const productName = this.dataset.product;
+                const productPrice = this.dataset.price;
+                const productStock = this.dataset.stock;
+
+                document.getElementById('modal-product-name').textContent = `Edit: ${productName}`;
+                document.getElementById('modal-product-price').value = productPrice;
+                document.getElementById('modal-product-stock').value = productStock;
+                
                 modal.style.display = 'block';
             });
         });
-
-        closeModalBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        saveChangesBtn.addEventListener('click', () => {
-            alert('Demo: Product details would be saved now!');
-            modal.style.display = 'none';
-        });
-
-        // Close modal if user clicks outside of it
-        window.addEventListener('click', (event) => {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
     }
 
-});
-
-
-// --- Smooth Scroll Fade-In Animation ---
-const fadeInObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+    if(closeButton) {
+        closeButton.onclick = function() {
+            modal.style.display = "none";
         }
-    });
-});
-
-const sectionsToFade = document.querySelectorAll('.fade-in-section');
-sectionsToFade.forEach((section) => {
-    fadeInObserver.observe(section);
+    }
+    if(saveChangesBtn) {
+        saveChangesBtn.onclick = function() {
+            alert('Demo: Product details would be saved here!');
+            modal.style.display = "none";
+        }
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 });
