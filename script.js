@@ -97,3 +97,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// --- Smooth Scroll Fade-In Animation ---
+const fadeInObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+});
+
+const sectionsToFade = document.querySelectorAll('.fade-in-section');
+sectionsToFade.forEach((section) => {
+    fadeInObserver.observe(section);
+});

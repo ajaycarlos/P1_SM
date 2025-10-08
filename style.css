@@ -453,3 +453,32 @@ a {
     color: var(--primary-color);
     text-decoration: underline;
 }
+/* --- Special Offer Banner --- */
+.offer-banner {
+    background-color: var(--secondary-color);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.offer-banner h2 {
+    font-size: 2.2rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.offer-banner p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* --- Scroll Animation --- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
