@@ -435,3 +435,21 @@ a {
     font-weight: bold;
     cursor: pointer;
 }
+/* --- Admin Link on Login Page --- */
+.admin-link-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.admin-link-container a {
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.admin-link-container a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}

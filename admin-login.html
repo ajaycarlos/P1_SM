@@ -8,37 +8,41 @@
 </head>
 <body>
     <header class="header">
-<div class="container">
-    <nav class="navbar">
-        <a href="index.html" class="logo-container">
-            <img src="logo.png" alt="Janatha Bazar Logo">
-        </a>
-        <!-- All customer navigation links, cart, and menu buttons are removed for a clean admin login screen -->
-    </nav>
-</div>
-
-
-        <!-- ... (Copy header from index.html, remove Cart & Hamburger) ... -->
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo-container">
+                    <img src="logo.png" alt="Janatha Bazar Logo">
+                </a>
+                <!-- Clean header for admin area -->
+            </nav>
+        </div>
     </header>
 
     <main class="section">
         <div class="container">
             <div class="login-container">
-                <h2>Staff & Admin Login</h2>
+                <h2>Staff Login</h2>
                 <p>Please enter your credentials to access the dashboard.</p>
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" value="admin" required>
+                    <input type="text" id="admin-user" placeholder="Username" value="admin">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" value="password123" required>
+                    <input type="password" id="admin-pass" placeholder="Password" value="password123">
                 </div>
-                <a href="admin-dashboard.html" class="btn" style="width: 100%; text-align: center;">Login</a>
+                <p class="demo-info">For the demo, please use:<br>Username: <strong>admin</strong><br>Password: <strong>password123</strong></p>
+                <button class="btn" id="admin-login-btn">Login to Dashboard</button>
+                <p id="admin-login-message"></p>
             </div>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+             <p>&copy; 2025 Janatha Bazar Admin Panel.</p>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
+
 
