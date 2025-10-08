@@ -1,42 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Janatha Bazar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <header class="header">
-        </header>
+        <!-- ... (Copy header from products.html) ... -->
+    </header>
     <main class="section">
         <div class="container">
             <h2 class="section-title">Checkout</h2>
             <div class="checkout-layout">
                 <div class="checkout-form">
                     <h3>1. Contact Information</h3>
-                    <div class="form-group"><input type="text" placeholder="Full Name"></div>
-                    <div class="form-group"><input type="tel" placeholder="Mobile Number"></div>
+                    <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+                    <div class="form-group"><input type="tel" placeholder="Mobile Number" required></div>
                     
-                    <h3>2. Delivery / Pickup</h3>
+                    <h3>2. Choose Your Option</h3>
                     <div class="delivery-options">
-                        <label><input type="radio" name="delivery-option" id="delivery" checked> Local Delivery</label>
+                        <input type="radio" name="delivery-option" id="delivery" checked>
+                        <label for="delivery"><strong>Local Delivery</strong><br><small>We will deliver to your doorstep.</small></label>
+                        
                         <div id="delivery-address-form">
-                           <div class="form-group"><textarea placeholder="Full Address (House Name, Street, Landmark)"></textarea></div>
-                           <div class="form-group"><input type="text" placeholder="Pincode"></div>
+                           <div class="form-group"><textarea placeholder="Full Address (House Name, Street, Landmark)" rows="3" required></textarea></div>
+                           <div class="form-group"><input type="text" placeholder="Pincode" required></div>
                         </div>
-                        <label><input type="radio" name="delivery-option" id="pickup"> In-Store Pickup</label>
+                        
+                        <input type="radio" name="delivery-option" id="pickup">
+                        <label for="pickup"><strong>In-Store Pickup</strong><br><small>We'll pack your order for you to collect.</small></label>
                     </div>
-
-                    <h3>3. Payment</h3>
-                    <p>Your order will be confirmed, and you can pay upon delivery or pickup.</p>
-                    <p><strong>Available methods:</strong> Cash, UPI (GPay/PhonePe), Card Swipe</p>
-                    
-                    <a href="order-status.html" class="btn" style="width: 100%; text-align: center; margin-top: 20px;">Place Order</a>
                 </div>
+
                 <div class="checkout-summary">
-                     </div>
+                     <h3>Your Order Summary</h3>
+                     <table style="width: 100%; margin-top: 15px;">
+                         <tr style="border-bottom: 1px solid var(--border-color); line-height: 2.5;">
+                             <td>Ponni Rice (1)</td>
+                             <td style="text-align: right;">₹320</td>
+                         </tr>
+                         <tr style="border-bottom: 1px solid var(--border-color); line-height: 2.5;">
+                            <td>Milma Milk (2)</td>
+                            <td style="text-align: right;">₹52</td>
+                        </tr>
+                         <tr style="font-weight: bold; line-height: 3;">
+                            <td>Total</td>
+                            <td style="text-align: right; font-size: 1.5rem; color: var(--primary-color);">₹372</td>
+                        </tr>
+                     </table>
+                     <h4 style="margin-top: 30px;">3. Payment Method</h4>
+                     <p style="color: var(--light-text-color); margin-bottom: 20px;">Your order will be confirmed now. You can pay with Cash, UPI, or Card upon delivery or pickup.</p>
+                     <a href="order-status.html" class="btn" style="width: 100%; text-align: center;">Place Order Now</a>
+                </div>
             </div>
         </div>
     </main>
     <footer class="footer">
-        </footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <img src="logo.png" alt="Logo" style="height: 60px; margin-bottom: 20px;">
+                <p>Your trusted local supermarket in Valiyora, Kerala.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a><br>
+                <a href="contact.html">Contact Us</a><br>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Janatha Bazar, Vengara<br>Valiyora, Kerala, India</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Email:</strong> contact@janathabazar.demo</p>
+            </div>
+        </div>        <!-- ... (Copy footer from products.html) ... -->
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
+

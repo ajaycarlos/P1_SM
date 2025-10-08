@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks & Beverages - Janatha Bazar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo-container">
+                    <img src="logo.png" alt="Janatha Bazar Logo">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Shop All</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <a href="cart.html" class="btn">Cart (0)</a>
+                    <div class="hamburger-menu">☰</div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div class="products-layout">
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="products.html">All Products</a></li>
+                            <li><a href="category-groceries.html">Groceries</a></li>
+                            <li><a href="category-snacks.html"><strong>Snacks & Beverages</strong></a></li>
+                            <li><a href="#">Dairy & Bakery</a></li>
+                            <li><a href="#">Personal Care</a></li>
+                            <li><a href="#">Household</a></li>
+                        </ul>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Filter by Price</h3>
+                        <div class="price-filter">
+                            <input type="range" min="10" max="1000" value="500" style="width: 100%;">
+                            <p style="text-align: center; margin-top: 5px;">Price: ₹10 - ₹1000</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="product-grid">
+                     <h2 class="section-title" style="grid-column: 1 / -1; text-align: left;">Snacks & Beverages</h2>
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <a href="product-detail.html" class="product-card-img"><img src="images/product-chips.jpeg" alt="Chips"></a>
+                        <div class="product-card-info"><h3>Lays Potato Chips</h3><p class="price">₹20</p><button class="btn btn-add-to-cart">Add to Cart</button></div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                         <a href="product-detail.html" class="product-card-img"><img src="images/product-biscuits.jpeg" alt="Biscuits"></a>
+                        <div class="product-card-info"><h3>Britannia Biscuits</h3><p class="price">₹30</p><button class="btn btn-add-to-cart">Add to Cart</button></div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="product-card">
+                        <a href="product-detail.html" class="product-card-img"><img src="images/product-juice.jpeg" alt="Juice"></a>
+                        <div class="product-card-info"><h3>Real Fruit Juice (1L)</h3><p class="price">₹110</p><button class="btn btn-add-to-cart">Add to Cart</button></div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="product-card">
+                        <a href="product-detail.html" class="product-card-img"><img src="images/product-coffee.jpeg" alt="Coffee"></a>
+                        <div class="product-card-info"><h3>Bru Coffee Powder</h3><p class="price">₹95</p><button class="btn btn-add-to-cart">Add to Cart</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <!-- ... (Copy footer from products.html) ... -->
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

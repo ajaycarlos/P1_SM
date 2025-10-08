@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Janatha Bazar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <header class="header">
-        </header>
+        <!-- ... (Copy header from products.html) ... -->
+    </header>
     <main class="section">
         <div class="container">
             <h2 class="section-title">Your Shopping Cart</h2>
@@ -21,10 +26,30 @@
                     <tr>
                         <td>
                             <div class="cart-item-info">
-                                <img src="images/milma-milk.jpg" alt="Milk">
+                                <img src="images/product-ponnirice.jpeg" alt="Ponni Rice">
                                 <div>
-                                    <h3>Milma Fresh Milk (500ml)</h3>
-                                    <a href="#">Remove</a>
+                                    <h3>Ponni Rice (5kg Bag)</h3>
+                                    <a href="#" style="color: #dc3545;">Remove</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹320</td>
+                        <td>
+                           <div class="quantity-selector">
+                                <button>-</button>
+                                <input type="text" value="1" readonly>
+                                <button>+</button>
+                            </div>
+                        </td>
+                        <td>₹320</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cart-item-info">
+                                <img src="images/product-milkmilk.jpeg" alt="Milk">
+                                <div>
+                                    <h3>Milma Milk (500ml)</h3>
+                                    <a href="#" style="color: #dc3545;">Remove</a>
                                 </div>
                             </div>
                         </td>
@@ -32,21 +57,40 @@
                         <td>
                            <div class="quantity-selector">
                                 <button>-</button>
-                                <input type="text" value="2">
+                                <input type="text" value="2" readonly>
                                 <button>+</button>
                             </div>
                         </td>
                         <td>₹52</td>
                     </tr>
-                     </tbody>
+                </tbody>
             </table>
             <div class="cart-actions">
-                <h3>Subtotal: ₹52.00</h3>
-                <a href="checkout.html" class="btn">Proceed to Checkout</a>
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Subtotal: ₹372.00</h3>
+                <a href="checkout.html" class="btn btn-secondary">Proceed to Checkout</a>
             </div>
         </div>
     </main>
     <footer class="footer">
-        </footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <img src="logo.png" alt="Logo" style="height: 60px; margin-bottom: 20px;">
+                <p>Your trusted local supermarket in Valiyora, Kerala.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a><br>
+                <a href="contact.html">Contact Us</a><br>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Janatha Bazar, Vengara<br>Valiyora, Kerala, India</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Email:</strong> contact@janathabazar.demo</p>
+            </div>
+        </div>        <!-- ... (Copy footer from products.html) ... -->
+    </footer>
 </body>
 </html>
+

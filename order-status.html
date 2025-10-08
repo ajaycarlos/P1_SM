@@ -1,35 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - Janatha Bazar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <header class="header">
-        </header>
+        <!-- ... (Copy header from products.html) ... -->
+    </header>
     <main class="section">
         <div class="container order-status-container">
-            <h2>Thank You For Your Order!</h2>
-            <p>Your order #JB12345 has been placed. You can track its status below.</p>
+            <h2 style="color: var(--success-color); font-size: 2.5rem;">Thank You For Your Order!</h2>
+            <p style="font-size: 1.2rem; margin-top: 10px;">Your order #JB12345 has been placed successfully.</p>
+            <p style="color: var(--light-text-color);">We will send you a confirmation message shortly. You can track your order's progress below.</p>
+            
             <div class="order-status-timeline">
                 <div class="status-step completed">
                     <div class="icon">✓</div>
-                    <p>Order Confirmed</p>
+                    <p>Order<br>Confirmed</p>
                 </div>
-                <div class="status-step completed">
+                <div class="status-step active">
                     <div class="icon">📦</div>
-                    <p>Packing</p>
+                    <p>Packing<br>In Progress</p>
                 </div>
                 <div class="status-step">
                     <div class="icon">🚚</div>
-                    <p>Out for Delivery</p>
+                    <p>Out for<br>Delivery</p>
                 </div>
                  <div class="status-step">
                     <div class="icon">🏠</div>
                     <p>Delivered</p>
                 </div>
             </div>
+            <a href="index.html" class="btn" style="margin-top: 40px;">Continue Shopping</a>
         </div>
     </main>
      <footer class="footer">
-        </footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <img src="logo.png" alt="Logo" style="height: 60px; margin-bottom: 20px;">
+                <p>Your trusted local supermarket in Valiyora, Kerala.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a><br>
+                <a href="contact.html">Contact Us</a><br>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Janatha Bazar, Vengara<br>Valiyora, Kerala, India</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Email:</strong> contact@janathabazar.demo</p>
+            </div>
+        </div>        <!-- ... (Copy footer from products.html) ... -->
+    </footer>
 </body>
 </html>
+
