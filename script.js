@@ -15,11 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const deliveryAddressForm = document.getElementById('delivery-address-form');
     if (deliveryRadio && pickupRadio && deliveryAddressForm) {
         const updateDeliveryOptions = () => {
-            if (deliveryRadio.checked) {
-                deliveryAddressForm.style.display = 'block';
-            } else {
-                deliveryAddressForm.style.display = 'none';
-            }
+            deliveryAddressForm.style.display = deliveryRadio.checked ? 'block' : 'none';
         };
         updateDeliveryOptions();
         deliveryRadio.addEventListener('change', updateDeliveryOptions);
@@ -66,11 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Admin Login Page Logic (FIXED) ---
+    // --- Admin Login Page Logic ---
     const adminLoginBtn = document.getElementById('admin-login-btn');
     if (adminLoginBtn) {
         adminLoginBtn.addEventListener('click', function() {
-            // Correct IDs are now used
             const username = document.getElementById('admin-username').value;
             const password = document.getElementById('admin-password').value;
             const messageEl = document.getElementById('admin-login-message');
@@ -85,43 +80,65 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Admin Products Page Modal Logic ---
+    // --- EDITED: Admin Products Page Modal Logic (Completely Rewritten) ---
     const modal = document.getElementById('edit-product-modal');
     const editButtons = document.querySelectorAll('.btn-edit-product');
-    const closeButton = document.querySelector('.close-button');
-    const saveChangesBtn = document.getElementById('save-product-changes');
-    if (editButtons.length > 0 && modal) {
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const saveChangesBtn = document.getElementById('save-changes-btn');
+
+    if (modal) {
+        // Open the modal when any "Edit" button is clicked
         editButtons.forEach(button => {
             button.addEventListener('click', function() {
-                const productName = this.dataset.product;
-                const productPrice = this.dataset.price;
-                const productStock = this.dataset.stock;
-                document.getElementById('modal-product-name').textContent = `Edit: ${productName}`;
-                document.getElementById('modal-product-price').value = productPrice;
-                document.getElementById('modal-product-stock').value = productStock;
+                // Get data from the button's data attributes
+                const name = this.dataset.name;
+                const price = this.dataset.price;
+                const stock = this.dataset.stock;
+
+                // Populate the modal with the correct data
+                document.getElementById('modal-product-title').textContent = `Edit: ${name}`;
+                document.getElementById('product-name').value = name;
+                document.getElementById('product-price').value = price;
+                document.getElementById('stock-status').value = stock;
+                
+                // Show the modal
                 modal.style.display = 'block';
             });
         });
-    }
-    if(closeButton) { closeButton.onclick = function() { modal.style.display = "none"; } }
-    if(saveChangesBtn) {
-        saveChangesBtn.onclick = function() {
-            alert('Demo: Product details would be saved here!');
-            modal.style.display = "none";
+
+        // Close the modal when the 'x' is clicked
+        if (closeModalBtn) {
+            closeModalBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+        }
+
+        // Save changes (demo alert)
+        if (saveChangesBtn) {
+            saveChangesBtn.onclick = function() {
+                alert('Demo: Product details would be saved here!');
+                modal.style.display = "none";
+            }
+        }
+
+        // Close the modal if the user clicks outside of the modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     }
-    window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
 
     // --- Scroll Fade-In Animation ---
     const sections = document.querySelectorAll('.fade-in-section');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-            }
-        });
-    }, { threshold: 0.1 });
-    sections.forEach(section => { observer.observe(section); });
+    if (sections.length > 0) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => { observer.observe(section); });
+    }
 });
-
-
