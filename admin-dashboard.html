@@ -3,72 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Janatha Bazar</title>
+    <title>Admin Dashboard - Orders</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="admin-layout">
-        <aside class="admin-sidebar">
-            <a href="index.html" class="logo-container" style="padding: 20px 10px; text-decoration: none;">
-                <img src="logo.png" alt="Logo" style="height: 40px;">
-                <div class="logo-text">
-                    <span class="main-title" style="font-size: 1rem;">JANATHA BAZAR</span>
-                    <span class="sub-title" style="font-size: 0.8rem;">Vengara</span>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo-container">
+                    <img src="logo.png" alt="Janatha Bazar Logo">
+                    <div class="logo-text">
+                        <span class="main-title">JANATHA BAZAR</span>
+                        <span class="sub-title">Vengara</span>
+                    </div>
+                </a>
+                <div class="admin-nav">
+                    <a href="admin-dashboard.html" class="active">Orders</a>
+                    <a href="admin-products.html">Products</a>
+                    <a href="admin-login.html" class="logout-link">Logout</a>
                 </div>
-            </a>
-            <ul>
-                <li><a href="admin-dashboard.html" class="active">Dashboard</a></li>
-                <li><a href="admin-products.html">Products</a></li>
-                <li><a href="#">Customers</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="index.html">Logout</a></li>
-            </ul>
-        </aside>
-        <main class="admin-main-content">
-            <header class="admin-header">
-                <h2>Welcome, Admin!</h2>
-            </header>
-            <section class="admin-content-area">
-                <h3>Recent Orders</h3>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h2 class="section-title">Order Management Dashboard</h2>
+            <div class="admin-table-container">
                 <table class="admin-table">
                     <thead>
                         <tr>
                             <th>Order ID</th>
-                            <th>Customer</th>
+                            <th>Customer Name</th>
+                            <th>Items</th>
                             <th>Total</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="status-new">
                             <td>#JB12345</td>
-                            <td>Ramesh P.</td>
-                            <td>₹372.00</td>
-                            <td><span class="status-packing">Packing</span></td>
-                            <td><button class="btn btn-sm">View Details</button></td>
-                        </tr>
-                         <tr>
-                            <td>#JB12344</td>
-                            <td>Fathima S.</td>
-                            <td>₹110.00</td>
-                            <td><span class="status-delivered">Delivered</span></td>
-                            <td><button class="btn btn-sm">View Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>#JB12343</td>
                             <td>Arun Kumar</td>
-                            <td>₹240.00</td>
-                            <td><span class="status-delivered">Delivered</span></td>
-                            <td><button class="btn btn-sm">View Details</button></td>
+                            <td>3</td>
+                            <td>₹450.00</td>
+                            <td><span class="status-badge status-new">New</span></td>
+                            <td><a href="#" class="btn btn-sm">View Details</a></td>
+                        </tr>
+                        <tr class="status-packing">
+                            <td>#JB12344</td>
+                            <td>Priya V.</td>
+                            <td>5</td>
+                            <td>₹780.00</td>
+                            <td><span class="status-badge status-packing">Packing</span></td>
+                            <td><a href="#" class="btn btn-sm">View Details</a></td>
+                        </tr>
+                        <tr class="status-delivery">
+                            <td>#JB12343</td>
+                            <td>Mohammed Shafi</td>
+                            <td>2</td>
+                            <td>₹210.00</td>
+                            <td><span class="status-badge status-delivery">Out for Delivery</span></td>
+                            <td><a href="#" class="btn btn-sm">View Details</a></td>
+                        </tr>
+                        <tr class="status-completed">
+                            <td>#JB12342</td>
+                            <td>Anjali Menon</td>
+                            <td>4</td>
+                            <td>₹550.00</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                            <td><a href="#" class="btn btn-sm">View Details</a></td>
                         </tr>
                     </tbody>
                 </table>
-            </section>
-        </main>
-    </div>
+            </div>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
+```eof
 
+### **2. `admin-products.html` (Rewritten)**
+This is the most important fix. This version includes the missing pop-up modal code and adds the correct `data-*` attributes to the "Edit" buttons, which will make them work perfectly.
 
+```html:Admin Products (Final):admin-products.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo-container">
+                    <img src="logo.png" alt="Janatha Bazar Logo">
+                    <div class="logo-text">
+                        <span class="main-title">JANATHA BAZAR</span>
+                        <span class="sub-title">Vengara</span>
+                    </div>
+                </a>
+                <div class="admin-nav">
+                    <a href="admin-dashboard.html">Orders</a>
+                    <a href="admin-products.html" class="active">Products</a>
+                    <a href="admin-login.html" class="logout-link">Logout</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h2 class="section-title">Product Management</h2>
+            <div class="admin-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Price (₹)</th>
+                            <th>Stock Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tomato (1kg)</td>
+                            <td>Groceries</td>
+                            <td>45.00</td>
+                            <td><span class="status-badge status-instock">In Stock</span></td>
+                            <td><button class="btn btn-sm btn-edit-product" data-name="Tomato (1kg)" data-price="45" data-stock="instock">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>Ponni Rice (5kg Bag)</td>
+                            <td>Groceries</td>
+                            <td>320.00</td>
+                            <td><span class="status-badge status-instock">In Stock</span></td>
+                            <td><button class="btn btn-sm btn-edit-product" data-name="Ponni Rice (5kg Bag)" data-price="320" data-stock="instock">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>Milma Milk (500ml)</td>
+                            <td>Dairy & Bakery</td>
+                            <td>26.00</td>
+                            <td><span class="status-badge status-outofstock">Out of Stock</span></td>
+                            <td><button class="btn btn-sm btn-edit-product" data-name="Milma Milk (500ml)" data-price="26" data-stock="outofstock">Edit</button></td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="edit-product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3 id="modal-product-name">Edit Product</h3>
+                <div class="form-group">
+                    <label for="modal-product-price">Price (₹)</label>
+                    <input type="number" id="modal-product-price">
+                </div>
+                <div class="form-group">
+                    <label for="modal-product-stock">Stock Status</label>
+                    <select id="modal-product-stock">
+                        <option value="instock">In Stock</option>
+                        <option value="outofstock">Out of Stock</option>
+                    </select>
+                </div>
+                <button class="btn" id="save-product-changes">Save Changes</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+```eof
